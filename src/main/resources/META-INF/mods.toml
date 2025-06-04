@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[51,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="iceplus"
+version="1.0.0"
+displayName="IcePlus"
+description="A bussin' mod that enhances blue ice with custom textures and flair for #Grok3000."
+authors="Aleks"
+#logoFile="logo.png" # Uncomment if you have a logo.png in src/main/resources
+
+[[dependencies.iceplus]]
+    modId="forge"
+    mandatory=true
+    versionRange="[51.0.33,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.iceplus]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21,)"
+    ordering="NONE"
+    side="BOTH"
