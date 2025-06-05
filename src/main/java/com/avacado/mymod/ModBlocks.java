@@ -26,6 +26,10 @@ public class ModBlocks {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, VeryBlueIce.MODID);
     public static final RegistryObject<BlockItem> VERY_BLUE_ICE_ITEM = ITEMS.register("very_blue_ice", () -> new BlockItem(VERY_BLUE_ICE.get(), new Item.Properties()));
     
+    // grok fr nc
+    public static final RegistryObject<Item> GROK = ITEMS.register("grok", Grok::new);
+
+
     // osrs put that john in creative
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
@@ -38,6 +42,8 @@ public class ModBlocks {
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(VERY_BLUE_ICE_ITEM);
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
+            event.accept(GROK);
     }
 
     
