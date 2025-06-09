@@ -34,9 +34,9 @@ public class IceWand extends Item {
                 world.setBlock(pos, Blocks.ICE.defaultBlockState(), 3);
 
                 // Damage the item by 1 durability
-                stack.hurtAndBreak(1, context.getPlayer(), (player) -> {
-                    player.broadcastBreakEvent(context.getHand());
-                });
+                // stack.hurtAndBreak(1, context.getPlayer(), (player) -> {
+                //     player.broadcastBreakEvent(context.getHand());
+                // });
             }
             return InteractionResult.sidedSuccess(world.isClientSide);
         }

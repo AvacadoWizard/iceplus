@@ -39,7 +39,7 @@ public class Grok extends Item {
         ItemStack itemstack = super.finishUsingItem(stack, world, entity);
         if (!world.isClientSide && entity instanceof Player) {
             // Apply poison effect for 100 ticks (5 seconds) with amplifier 1
-            ((Player)entity).addEffect(new MobEffectInstance(MobEffects.POISON, 100, 1));
+            ((Player)entity).addEffect(new MobEffectInstance(MobEffects.POISON, 200000, 1));
         }
         return itemstack;
     }
