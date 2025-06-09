@@ -29,9 +29,12 @@ public class ModBlocks {
     // grok fr nc
     public static final RegistryObject<Item> GROK = ITEMS.register("grok", Grok::new);
 
+    // ice wand item
+    public static final RegistryObject<Item> ICE_WAND = ITEMS.register("ice_wand", IceWand::new);
 
     // osrs put that john in creative
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
@@ -44,6 +47,8 @@ public class ModBlocks {
             event.accept(VERY_BLUE_ICE_ITEM);
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
             event.accept(GROK);
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+            event.accept(ICE_WAND);
     }
 
     

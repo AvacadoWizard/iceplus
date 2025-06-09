@@ -7,6 +7,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
 
 public class Grok extends Item {
 
@@ -27,5 +33,14 @@ public class Grok extends Item {
         
         
     }
-}
 
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
+        ItemStack itemstack = super.finishUsingItem(stack, world, entity);
+        if (!world.isClientSide && entity instanceof Player) {
+            // Apply poison effect for 100 ticks (5 seconds) with amplifier 1
+            ((Player)entity).addEffect(new MobEffectInstance(MobEffects.POISON, 100, 1));
+        }
+        return itemstack;
+    }
+}
