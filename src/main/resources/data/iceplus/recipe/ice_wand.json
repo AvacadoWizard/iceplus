@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P",
+    "G",
+    "S"
+  ],
+  "key": {
+    "P": { "item": "iceplus:purple_ice" },
+    "G": { "item": "iceplus:grok" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "id": "iceplus:ice_wand",
+    "count": 1
+  }
+}
