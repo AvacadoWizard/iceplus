@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": { "item": "minecraft:blue_ice" }
+  },
+  "result": {
+    "item": "iceplus:very_blue_ice",
+    "count": 1
+  }
+}

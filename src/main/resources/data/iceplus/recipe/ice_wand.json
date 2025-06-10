@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " W ",
-    " W ",
-    " W "
-
+    "P",
+    "G",
+    "S"
   ],
   "key": {
-    "W": { "item": "minecraft:ice" },
-    "R": { "item": "minecraft:redstone" }
+    "P": { "item": "iceplus:purple_ice" },
+    "G": { "item": "iceplus:grok" },
+    "S": { "item": "minecraft:stick" }
   },
   "result": {
     "id": "iceplus:ice_wand",
-    "count": 4
+    "count": 1
   }
 }

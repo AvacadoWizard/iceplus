@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "iceplus:purple_ice" }
+  ],
+  "result": {
+    "item": "iceplus:very_blue_ice",
+    "count": 9
+  }
+}
