@@ -9,7 +9,7 @@
     "B": { "item": "minecraft:blue_ice" }
   },
   "result": {
-    "item": "iceplus:very_blue_ice",
+    "id": "iceplus:very_blue_ice",
     "count": 1
   }
 }

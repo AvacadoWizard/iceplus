@@ -4,7 +4,7 @@
     { "item": "iceplus:purple_ice" }
   ],
   "result": {
-    "item": "iceplus:very_blue_ice",
+    "id": "iceplus:very_blue_ice",
     "count": 9
   }
 }

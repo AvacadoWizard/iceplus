@@ -9,7 +9,7 @@
     "V": { "item": "iceplus:very_blue_ice" }
   },
   "result": {
-    "item": "iceplus:purple_ice",
+    "id": "iceplus:purple_ice",
     "count": 1
   }
 }

@@ -6,6 +6,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
@@ -27,16 +28,38 @@ public class IceWand extends Item {
         BlockState state = world.getBlockState(pos);
         ItemStack stack = context.getItemInHand();
 
-        // Check if the block is VeryBlueIce
+        if (state.getBlock() instanceof PurpleIce) {
+            if (!world.isClientSide) {
+                world.explode(null, pos.getX(), pos.getY(), pos.getZ(), 4.0F, Level.ExplosionInteraction.BLOCK);
+                return InteractionResult.SUCCESS;
+
+            }
+        }
+
         if (state.getBlock() instanceof VeryBlueIce) {
             if (!world.isClientSide) {
-                // Change the block to regular ice
-                world.setBlock(pos, Blocks.ICE.defaultBlockState(), 3);
+                world.setBlock(pos, ModBlocks.PURPLE_ICE.get().defaultBlockState(), 3);
+            }
+            return InteractionResult.sidedSuccess(world.isClientSide);
+        }
 
-                // Damage the item by 1 durability
-                // stack.hurtAndBreak(1, context.getPlayer(), (player) -> {
-                //     player.broadcastBreakEvent(context.getHand());
-                // });
+        if (state.getBlock() == Blocks.BLUE_ICE) {
+            if (!world.isClientSide) {
+                world.setBlock(pos, ModBlocks.VERY_BLUE_ICE.get().defaultBlockState(), 3);
+            }
+            return InteractionResult.sidedSuccess(world.isClientSide);
+        }
+
+        if (state.getBlock() == Blocks.PACKED_ICE) {
+            if (!world.isClientSide) {
+                world.setBlock(pos, Blocks.BLUE_ICE.defaultBlockState(), 3);
+            }
+            return InteractionResult.sidedSuccess(world.isClientSide);
+        }
+
+        if (state.getBlock() == Blocks.ICE) {
+            if (!world.isClientSide) {
+                world.setBlock(pos, Blocks.PACKED_ICE.defaultBlockState(), 3);
             }
             return InteractionResult.sidedSuccess(world.isClientSide);
         }
